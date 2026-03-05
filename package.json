@@ -1,0 +1,72 @@
+{
+  "name": "n8n-nodes-ninaapi",
+  "version": "1.0.0",
+  "description": "N.I.N.A. ninaAPI community nodes for n8n – control astronomy imaging software (camera, mount, focuser, dome, guider, polar alignment and more)",
+  "keywords": [
+    "n8n-community-node-package",
+    "nina",
+    "astronomy",
+    "astrophotography",
+    "telescope"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/eliasstepanik/n8n-nodes-ninaapi#readme",
+  "author": "eliasstepanik",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eliasstepanik/n8n-nodes-ninaapi.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc --project tsconfig.json",
+    "dev": "tsc --watch --project tsconfig.json",
+    "lint": "eslint nodes credentials --ext .ts",
+    "lintfix": "eslint nodes credentials --ext .ts --fix",
+    "prepublishOnly": "npm run build"
+  },
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/NinaApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/NinaApplication/NinaApplication.node.js",
+      "dist/nodes/NinaCamera/NinaCamera.node.js",
+      "dist/nodes/NinaDome/NinaDome.node.js",
+      "dist/nodes/NinaEventTrigger/NinaEventTrigger.node.js",
+      "dist/nodes/NinaFilterWheel/NinaFilterWheel.node.js",
+      "dist/nodes/NinaFlatDevice/NinaFlatDevice.node.js",
+      "dist/nodes/NinaFlats/NinaFlats.node.js",
+      "dist/nodes/NinaFocuser/NinaFocuser.node.js",
+      "dist/nodes/NinaFraming/NinaFraming.node.js",
+      "dist/nodes/NinaGuider/NinaGuider.node.js",
+      "dist/nodes/NinaImage/NinaImage.node.js",
+      "dist/nodes/NinaLiveStack/NinaLiveStack.node.js",
+      "dist/nodes/NinaMount/NinaMount.node.js",
+      "dist/nodes/NinaProfile/NinaProfile.node.js",
+      "dist/nodes/NinaRotator/NinaRotator.node.js",
+      "dist/nodes/NinaSafetyMonitor/NinaSafetyMonitor.node.js",
+      "dist/nodes/NinaSequence/NinaSequence.node.js",
+      "dist/nodes/NinaSwitch/NinaSwitch.node.js",
+      "dist/nodes/NinaTPPA/NinaTPPA.node.js",
+      "dist/nodes/NinaWeather/NinaWeather.node.js"
+    ]
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "@types/ws": "^8.5.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "eslint": "^8.57.0",
+    "typescript": "~5.4.0"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
+}
