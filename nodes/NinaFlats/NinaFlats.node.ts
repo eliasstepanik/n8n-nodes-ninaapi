@@ -4,7 +4,6 @@ import {
 	type INodeExecutionData,
 	type INodeType,
 	type INodeTypeDescription,
-	NodeConnectionTypes,
 	NodeOperationError,
 } from 'n8n-workflow';
 
@@ -18,8 +17,8 @@ export class NinaFlats implements INodeType {
 		subtitle: '={{$parameter["operation"]}}',
 		description: 'Control flat capture via N.I.N.A. ninaAPI',
 		defaults: { name: 'NINA Flats' },
-		inputs: [NodeConnectionTypes.Main],
-		outputs: [NodeConnectionTypes.Main],
+		inputs: ['main'],
+		outputs: ['main'],
 		credentials: [{ name: 'ninaApi', required: true }],
 		properties: [
 			{

@@ -4,7 +4,6 @@ import {
 	type INodeExecutionData,
 	type INodeType,
 	type INodeTypeDescription,
-	NodeConnectionTypes,
 	NodeOperationError,
 } from 'n8n-workflow';
 
@@ -18,8 +17,8 @@ export class NinaSequence implements INodeType {
 		subtitle: '={{$parameter["operation"]}}',
 		description: 'Control sequences via N.I.N.A. ninaAPI',
 		defaults: { name: 'NINA Sequence' },
-		inputs: [NodeConnectionTypes.Main],
-		outputs: [NodeConnectionTypes.Main],
+		inputs: ['main'],
+		outputs: ['main'],
 		credentials: [{ name: 'ninaApi', required: true }],
 		properties: [
 			{

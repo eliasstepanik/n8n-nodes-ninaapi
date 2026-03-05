@@ -4,7 +4,6 @@ import {
 	type INodeExecutionData,
 	type INodeType,
 	type INodeTypeDescription,
-	NodeConnectionTypes,
 	NodeOperationError,
 } from 'n8n-workflow';
 import WebSocket from 'ws';
@@ -20,8 +19,8 @@ export class NinaTPPA implements INodeType {
 		description:
 			'Control Three-Point Polar Alignment (TPPA) in N.I.N.A. via the ninaAPI WebSocket /tppa channel',
 		defaults: { name: 'NINA TPPA' },
-		inputs: [NodeConnectionTypes.Main],
-		outputs: [NodeConnectionTypes.Main],
+		inputs: ['main'],
+		outputs: ['main'],
 		credentials: [{ name: 'ninaApi', required: true }],
 		properties: [
 			{

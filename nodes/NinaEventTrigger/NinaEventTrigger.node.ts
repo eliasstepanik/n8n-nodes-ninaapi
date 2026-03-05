@@ -4,7 +4,6 @@ import {
 	type INodeTypeDescription,
 	type ITriggerFunctions,
 	type ITriggerResponse,
-	NodeConnectionTypes,
 } from 'n8n-workflow';
 import WebSocket from 'ws';
 
@@ -19,7 +18,7 @@ export class NinaEventTrigger implements INodeType {
 		description: 'Triggers when a N.I.N.A. event occurs via WebSocket',
 		defaults: { name: 'NINA Event Trigger' },
 		inputs: [],
-		outputs: [NodeConnectionTypes.Main],
+		outputs: ['main'],
 		credentials: [{ name: 'ninaApi', required: true }],
 		properties: [
 			{

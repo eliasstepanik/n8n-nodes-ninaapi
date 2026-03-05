@@ -4,7 +4,6 @@ import {
 	type INodeExecutionData,
 	type INodeType,
 	type INodeTypeDescription,
-	NodeConnectionTypes,
 	NodeOperationError,
 } from 'n8n-workflow';
 
@@ -18,8 +17,8 @@ export class NinaImage implements INodeType {
 		subtitle: '={{$parameter["operation"]}}',
 		description: 'Retrieve and manage images via N.I.N.A. ninaAPI',
 		defaults: { name: 'NINA Image' },
-		inputs: [NodeConnectionTypes.Main],
-		outputs: [NodeConnectionTypes.Main],
+		inputs: ['main'],
+		outputs: ['main'],
 		credentials: [{ name: 'ninaApi', required: true }],
 		properties: [
 			{

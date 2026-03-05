@@ -4,7 +4,6 @@ import {
   type INodeExecutionData,
   type INodeType,
   type INodeTypeDescription,
-  NodeConnectionTypes,
   NodeOperationError,
 } from 'n8n-workflow';
 
@@ -18,8 +17,8 @@ export class NinaSwitch implements INodeType {
     subtitle: '={{$parameter["operation"]}}',
     description: 'Interact with the NINA Switch equipment',
     defaults: { name: 'NINA Switch' },
-    inputs: [NodeConnectionTypes.Main],
-    outputs: [NodeConnectionTypes.Main],
+    inputs: ['main'],
+    outputs: ['main'],
     credentials: [{ name: 'ninaApi', required: true }],
     properties: [
       {

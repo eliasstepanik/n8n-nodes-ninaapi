@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-ninaapi",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "N.I.N.A. ninaAPI community nodes for n8n – control astronomy imaging software (camera, mount, focuser, dome, guider, polar alignment and more)",
   "keywords": [
     "n8n-community-node-package",
