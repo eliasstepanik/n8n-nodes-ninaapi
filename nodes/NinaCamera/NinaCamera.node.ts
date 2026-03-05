@@ -329,8 +329,8 @@ export class NinaCamera implements INodeType {
 				displayName: 'Get Result',
 				name: 'getResult',
 				type: 'boolean',
-				default: true,
-				description: 'Whether to return result data',
+					default: false,
+					description: 'Whether to retrieve the result of a previously started (background) capture. Leave false to start a new capture.',
 				displayOptions: {
 					show: {
 						operation: ['captureImage'],
@@ -565,7 +565,7 @@ export class NinaCamera implements INodeType {
 						qs.save = save;
 						const waitForResult = this.getNodeParameter('waitForResult', i, true) as boolean;
 						qs.waitForResult = waitForResult;
-						const getResult = this.getNodeParameter('getResult', i, true) as boolean;
+						const getResult = this.getNodeParameter('getResult', i, false) as boolean;
 						qs.getResult = getResult;
 						const resize = this.getNodeParameter('resize', i, false) as boolean;
 						qs.resize = resize;
