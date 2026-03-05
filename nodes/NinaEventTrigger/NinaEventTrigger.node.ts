@@ -5,7 +5,6 @@ import {
 	type ITriggerFunctions,
 	type ITriggerResponse,
 } from 'n8n-workflow';
-import WebSocket from 'ws';
 
 export class NinaEventTrigger implements INodeType {
 	description: INodeTypeDescription = {
@@ -74,6 +73,8 @@ export class NinaEventTrigger implements INodeType {
 	};
 
 	async trigger(this: ITriggerFunctions): Promise<ITriggerResponse | undefined> {
+		// eslint-disable-next-line @typescript-eslint/no-var-requires
+		const WebSocket = require('ws') as typeof import('ws');
 		const credentials = await this.getCredentials('ninaApi');
 		const eventFilter = this.getNodeParameter('event') as string;
 		const wsUrl = `ws://${credentials.host}:${credentials.port}/v2/socket`;

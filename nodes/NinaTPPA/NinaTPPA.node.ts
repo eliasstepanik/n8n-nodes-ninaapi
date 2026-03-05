@@ -6,7 +6,6 @@ import {
 	type INodeTypeDescription,
 	NodeOperationError,
 } from 'n8n-workflow';
-import WebSocket from 'ws';
 
 export class NinaTPPA implements INodeType {
 	description: INodeTypeDescription = {
@@ -216,6 +215,8 @@ export class NinaTPPA implements INodeType {
 	async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {
 		const items = this.getInputData();
 		const returnData: INodeExecutionData[] = [];
+		// eslint-disable-next-line @typescript-eslint/no-var-requires
+		const WebSocket = require('ws') as typeof import('ws');
 		const credentials = await this.getCredentials('ninaApi');
 		const wsUrl = `ws://${credentials.host}:${credentials.port}/v2/tppa`;
 
