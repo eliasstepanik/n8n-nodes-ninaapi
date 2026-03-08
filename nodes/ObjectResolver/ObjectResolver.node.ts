@@ -14,7 +14,7 @@ export class ObjectResolver implements INodeType {
 		icon: 'fa:crosshairs',
 		group: ['transform'],
 		version: 1,
-		subtitle: 'Resolve "{{$parameter["objectName"]}}"',
+		subtitle: '={{"Resolve " + $parameter["objectName"]}}',
 		description: 'Resolve astronomical object names to RA/Dec coordinates via SIMBAD Sesame',
 		defaults: { name: 'Object Resolver' },
 		inputs: ['main'],
