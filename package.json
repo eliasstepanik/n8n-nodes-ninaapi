@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-ninaapi",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "N.I.N.A. ninaAPI community nodes for n8n – control astronomy imaging software (camera, mount, focuser, dome, guider, polar alignment and more)",
   "keywords": [
     "n8n-community-node-package",
@@ -49,7 +49,8 @@
       "dist/nodes/NinaSequence/NinaSequence.node.js",
       "dist/nodes/NinaSwitch/NinaSwitch.node.js",
       "dist/nodes/NinaTPPA/NinaTPPA.node.js",
-      "dist/nodes/NinaWeather/NinaWeather.node.js"
+      "dist/nodes/NinaWeather/NinaWeather.node.js",
+      "dist/nodes/ObjectResolver/ObjectResolver.node.js"
     ]
   },
   "files": [
